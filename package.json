@@ -1,6 +1,6 @@
 {
   "name": "weezi-voting-parser",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "radspec": "^1.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fanilus/weezi-voting-parser.git"
   }
 }
