@@ -1,0 +1,278 @@
+{
+  "contractName": "EtherTokenConstant",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@aragon/os/contracts/common/EtherTokenConstant.sol\":\"EtherTokenConstant\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":10},\"remappings\":[]},\"sources\":{\"@aragon/os/contracts/common/EtherTokenConstant.sol\":{\"keccak256\":\"0xb18d16ad5127519251d9759349bf0ce1e5cfc861a776c5297b91a625c84d0363\",\"urls\":[\"bzzr://42b57d455cdbf7a8ab1383eb977c55d1826870a488cfc0cbc906a3d0f9ad2328\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820fba90d0a381418c4c89c822b0174befe4dba58171c74e094ac7c41ca127abd3a0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820fba90d0a381418c4c89c822b0174befe4dba58171c74e094ac7c41ca127abd3a0029",
+  "sourceMap": "195:79:37:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;195:79:37;;;;;;;",
+  "deployedSourceMap": "195:79:37:-;;;;;",
+  "source": "/*\n * SPDX-License-Identitifer:    MIT\n */\n\npragma solidity ^0.4.24;\n\n\n// aragonOS and aragon-apps rely on address(0) to denote native ETH, in\n// contracts where both tokens and ETH are accepted\ncontract EtherTokenConstant {\n    address internal constant ETH = address(0);\n}\n",
+  "sourcePath": "@aragon/os/contracts/common/EtherTokenConstant.sol",
+  "ast": {
+    "absolutePath": "@aragon/os/contracts/common/EtherTokenConstant.sol",
+    "exportedSymbols": {
+      "EtherTokenConstant": [
+        11739
+      ]
+    },
+    "id": 11740,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11733,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "44:24:37"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11739,
+        "linearizedBaseContracts": [
+          11739
+        ],
+        "name": "EtherTokenConstant",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 11738,
+            "name": "ETH",
+            "nodeType": "VariableDeclaration",
+            "scope": 11739,
+            "src": "229:42:37",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 11734,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "229:7:37",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "30",
+                  "id": 11736,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "269:1:37",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_0_by_1",
+                    "typeString": "int_const 0"
+                  },
+                  "value": "0"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_rational_0_by_1",
+                    "typeString": "int_const 0"
+                  }
+                ],
+                "id": 11735,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "nodeType": "ElementaryTypeNameExpression",
+                "src": "261:7:37",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_address_$",
+                  "typeString": "type(address)"
+                },
+                "typeName": "address"
+              },
+              "id": 11737,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "261:10:37",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 11740,
+        "src": "195:79:37"
+      }
+    ],
+    "src": "44:231:37"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "@aragon/os/contracts/common/EtherTokenConstant.sol",
+      "exportedSymbols": {
+        "EtherTokenConstant": [
+          11739
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".24"
+          ]
+        },
+        "id": 11733,
+        "name": "PragmaDirective",
+        "src": "44:24:37"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            11739
+          ],
+          "name": "EtherTokenConstant",
+          "scope": 11740
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "name": "ETH",
+              "scope": 11739,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 11734,
+                "name": "ElementaryTypeName",
+                "src": "229:7:37"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "isStructConstructorCall": false,
+                  "lValueRequested": false,
+                  "names": [
+                    null
+                  ],
+                  "type": "address",
+                  "type_conversion": true
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "type": "type(address)",
+                      "value": "address"
+                    },
+                    "id": 11735,
+                    "name": "ElementaryTypeNameExpression",
+                    "src": "261:7:37"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "hexvalue": "30",
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "subdenomination": null,
+                      "token": "number",
+                      "type": "int_const 0",
+                      "value": "0"
+                    },
+                    "id": 11736,
+                    "name": "Literal",
+                    "src": "269:1:37"
+                  }
+                ],
+                "id": 11737,
+                "name": "FunctionCall",
+                "src": "261:10:37"
+              }
+            ],
+            "id": 11738,
+            "name": "VariableDeclaration",
+            "src": "229:42:37"
+          }
+        ],
+        "id": 11739,
+        "name": "ContractDefinition",
+        "src": "195:79:37"
+      }
+    ],
+    "id": 11740,
+    "name": "SourceUnit",
+    "src": "44:231:37"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-10-14T14:14:04.200Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

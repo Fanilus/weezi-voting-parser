@@ -1,0 +1,672 @@
+{
+  "contractName": "KernelAppIds",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@aragon/os/contracts/kernel/KernelConstants.sol\":\"KernelAppIds\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":10},\"remappings\":[]},\"sources\":{\"@aragon/os/contracts/kernel/KernelConstants.sol\":{\"keccak256\":\"0x95e46be2becfb4c8952880909cd32adf5dcfa8c2e0fdf4ae054bbf83ef7f53cd\",\"urls\":[\"bzzr://68d3ce6cda841600d1e5724c0752314a084e4eeebc1fdcb6bc22c92d77c9a3db\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820b974b5d36f07400a214877fde59e210df84741ceea866c283c875559c2cabbbe0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820b974b5d36f07400a214877fde59e210df84741ceea866c283c875559c2cabbbe0029",
+  "sourceMap": "71:678:65:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;71:678:65;;;;;;;",
+  "deployedSourceMap": "71:678:65:-;;;;;",
+  "source": "/*\n * SPDX-License-Identitifer:    MIT\n */\n\npragma solidity ^0.4.24;\n\n\ncontract KernelAppIds {\n    /* Hardcoded constants to save gas\n    bytes32 internal constant KERNEL_CORE_APP_ID = apmNamehash(\"kernel\");\n    bytes32 internal constant KERNEL_DEFAULT_ACL_APP_ID = apmNamehash(\"acl\");\n    bytes32 internal constant KERNEL_DEFAULT_VAULT_APP_ID = apmNamehash(\"vault\");\n    */\n    bytes32 internal constant KERNEL_CORE_APP_ID = 0x3b4bf6bf3ad5000ecf0f989d5befde585c6860fea3e574a4fab4c49d1c177d9c;\n    bytes32 internal constant KERNEL_DEFAULT_ACL_APP_ID = 0xe3262375f45a6e2026b7e7b18c2b807434f2508fe1a2a3dfb493c7df8f4aad6a;\n    bytes32 internal constant KERNEL_DEFAULT_VAULT_APP_ID = 0x7e852e0fcfce6551c13800f1e7476f982525c2b5277ba14b24339c68416336d1;\n}\n\n\ncontract KernelNamespaceConstants {\n    /* Hardcoded constants to save gas\n    bytes32 internal constant KERNEL_CORE_NAMESPACE = keccak256(\"core\");\n    bytes32 internal constant KERNEL_APP_BASES_NAMESPACE = keccak256(\"base\");\n    bytes32 internal constant KERNEL_APP_ADDR_NAMESPACE = keccak256(\"app\");\n    */\n    bytes32 internal constant KERNEL_CORE_NAMESPACE = 0xc681a85306374a5ab27f0bbc385296a54bcd314a1948b6cf61c4ea1bc44bb9f8;\n    bytes32 internal constant KERNEL_APP_BASES_NAMESPACE = 0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b5783aea1fd01786bc26f35ac0f;\n    bytes32 internal constant KERNEL_APP_ADDR_NAMESPACE = 0xd6f028ca0e8edb4a8c9757ca4fdccab25fa1e0317da1188108f7d2dee14902fb;\n}\n",
+  "sourcePath": "@aragon/os/contracts/kernel/KernelConstants.sol",
+  "ast": {
+    "absolutePath": "@aragon/os/contracts/kernel/KernelConstants.sol",
+    "exportedSymbols": {
+      "KernelAppIds": [
+        14999
+      ],
+      "KernelNamespaceConstants": [
+        15009
+      ]
+    },
+    "id": 15010,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14989,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "44:24:65"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14999,
+        "linearizedBaseContracts": [
+          14999
+        ],
+        "name": "KernelAppIds",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 14992,
+            "name": "KERNEL_CORE_APP_ID",
+            "nodeType": "VariableDeclaration",
+            "scope": 14999,
+            "src": "379:113:65",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14990,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "379:7:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307833623462663662663361643530303065636630663938396435626566646535383563363836306665613365353734613466616234633439643163313737643963",
+              "id": 14991,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "426:66:65",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_26820674581417955770618996886606012287057497523217723680490657072951651171740_by_1",
+                "typeString": "int_const 2682...(69 digits omitted)...1740"
+              },
+              "value": "0x3b4bf6bf3ad5000ecf0f989d5befde585c6860fea3e574a4fab4c49d1c177d9c"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 14995,
+            "name": "KERNEL_DEFAULT_ACL_APP_ID",
+            "nodeType": "VariableDeclaration",
+            "scope": 14999,
+            "src": "498:120:65",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14993,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "498:7:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307865333236323337356634356136653230323662376537623138633262383037343334663235303866653161326133646662343933633764663866346161643661",
+              "id": 14994,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "552:66:65",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_102742401558032346476295342465683194059973100356111151994489339464177083395434_by_1",
+                "typeString": "int_const 1027...(70 digits omitted)...5434"
+              },
+              "value": "0xe3262375f45a6e2026b7e7b18c2b807434f2508fe1a2a3dfb493c7df8f4aad6a"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 14998,
+            "name": "KERNEL_DEFAULT_VAULT_APP_ID",
+            "nodeType": "VariableDeclaration",
+            "scope": 14999,
+            "src": "624:122:65",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14996,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "624:7:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307837653835326530666366636536353531633133383030663165373437366639383235323563326235323737626131346232343333396336383431363333366431",
+              "id": 14997,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "680:66:65",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_57226727487722793098086042470445423054461272992937981295885369831335668168401_by_1",
+                "typeString": "int_const 5722...(69 digits omitted)...8401"
+              },
+              "value": "0x7e852e0fcfce6551c13800f1e7476f982525c2b5277ba14b24339c68416336d1"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 15010,
+        "src": "71:678:65"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15009,
+        "linearizedBaseContracts": [
+          15009
+        ],
+        "name": "KernelNamespaceConstants",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 15002,
+            "name": "KERNEL_CORE_NAMESPACE",
+            "nodeType": "VariableDeclaration",
+            "scope": 15009,
+            "src": "1065:116:65",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 15000,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1065:7:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307863363831613835333036333734613561623237663062626333383532393661353462636433313461313934386236636636316334656131626334346262396638",
+              "id": 15001,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1115:66:65",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_89787029022559609585059478019362941095301484731214564604685658211633205066232_by_1",
+                "typeString": "int_const 8978...(69 digits omitted)...6232"
+              },
+              "value": "0xc681a85306374a5ab27f0bbc385296a54bcd314a1948b6cf61c4ea1bc44bb9f8"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 15005,
+            "name": "KERNEL_APP_BASES_NAMESPACE",
+            "nodeType": "VariableDeclaration",
+            "scope": 15009,
+            "src": "1187:121:65",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 15003,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1187:7:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307866316633656234306635626331616431333434373136636564386238613034333164383430623537383361656131666430313738366263323666333561633066",
+              "id": 15004,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1242:66:65",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_109438364007015322736766724051813704643042782151430130119908516857056060615695_by_1",
+                "typeString": "int_const 1094...(70 digits omitted)...5695"
+              },
+              "value": "0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b5783aea1fd01786bc26f35ac0f"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 15008,
+            "name": "KERNEL_APP_ADDR_NAMESPACE",
+            "nodeType": "VariableDeclaration",
+            "scope": 15009,
+            "src": "1314:120:65",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 15006,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1314:7:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307864366630323863613065386564623461386339373537636134666463636162323566613165303331376461313138383130386637643264656531343930326662",
+              "id": 15007,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1368:66:65",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_97219274409662057620501307944052205416727314792190185427402972704265227272955_by_1",
+                "typeString": "int_const 9721...(69 digits omitted)...2955"
+              },
+              "value": "0xd6f028ca0e8edb4a8c9757ca4fdccab25fa1e0317da1188108f7d2dee14902fb"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 15010,
+        "src": "752:685:65"
+      }
+    ],
+    "src": "44:1394:65"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "@aragon/os/contracts/kernel/KernelConstants.sol",
+      "exportedSymbols": {
+        "KernelAppIds": [
+          14999
+        ],
+        "KernelNamespaceConstants": [
+          15009
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".24"
+          ]
+        },
+        "id": 14989,
+        "name": "PragmaDirective",
+        "src": "44:24:65"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            14999
+          ],
+          "name": "KernelAppIds",
+          "scope": 15010
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "name": "KERNEL_CORE_APP_ID",
+              "scope": 14999,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes32",
+                  "type": "bytes32"
+                },
+                "id": 14990,
+                "name": "ElementaryTypeName",
+                "src": "379:7:65"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "307833623462663662663361643530303065636630663938396435626566646535383563363836306665613365353734613466616234633439643163313737643963",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 2682...(69 digits omitted)...1740",
+                  "value": "0x3b4bf6bf3ad5000ecf0f989d5befde585c6860fea3e574a4fab4c49d1c177d9c"
+                },
+                "id": 14991,
+                "name": "Literal",
+                "src": "426:66:65"
+              }
+            ],
+            "id": 14992,
+            "name": "VariableDeclaration",
+            "src": "379:113:65"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "KERNEL_DEFAULT_ACL_APP_ID",
+              "scope": 14999,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes32",
+                  "type": "bytes32"
+                },
+                "id": 14993,
+                "name": "ElementaryTypeName",
+                "src": "498:7:65"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "307865333236323337356634356136653230323662376537623138633262383037343334663235303866653161326133646662343933633764663866346161643661",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 1027...(70 digits omitted)...5434",
+                  "value": "0xe3262375f45a6e2026b7e7b18c2b807434f2508fe1a2a3dfb493c7df8f4aad6a"
+                },
+                "id": 14994,
+                "name": "Literal",
+                "src": "552:66:65"
+              }
+            ],
+            "id": 14995,
+            "name": "VariableDeclaration",
+            "src": "498:120:65"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "KERNEL_DEFAULT_VAULT_APP_ID",
+              "scope": 14999,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes32",
+                  "type": "bytes32"
+                },
+                "id": 14996,
+                "name": "ElementaryTypeName",
+                "src": "624:7:65"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "307837653835326530666366636536353531633133383030663165373437366639383235323563326235323737626131346232343333396336383431363333366431",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 5722...(69 digits omitted)...8401",
+                  "value": "0x7e852e0fcfce6551c13800f1e7476f982525c2b5277ba14b24339c68416336d1"
+                },
+                "id": 14997,
+                "name": "Literal",
+                "src": "680:66:65"
+              }
+            ],
+            "id": 14998,
+            "name": "VariableDeclaration",
+            "src": "624:122:65"
+          }
+        ],
+        "id": 14999,
+        "name": "ContractDefinition",
+        "src": "71:678:65"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            15009
+          ],
+          "name": "KernelNamespaceConstants",
+          "scope": 15010
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "name": "KERNEL_CORE_NAMESPACE",
+              "scope": 15009,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes32",
+                  "type": "bytes32"
+                },
+                "id": 15000,
+                "name": "ElementaryTypeName",
+                "src": "1065:7:65"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "307863363831613835333036333734613561623237663062626333383532393661353462636433313461313934386236636636316334656131626334346262396638",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 8978...(69 digits omitted)...6232",
+                  "value": "0xc681a85306374a5ab27f0bbc385296a54bcd314a1948b6cf61c4ea1bc44bb9f8"
+                },
+                "id": 15001,
+                "name": "Literal",
+                "src": "1115:66:65"
+              }
+            ],
+            "id": 15002,
+            "name": "VariableDeclaration",
+            "src": "1065:116:65"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "KERNEL_APP_BASES_NAMESPACE",
+              "scope": 15009,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes32",
+                  "type": "bytes32"
+                },
+                "id": 15003,
+                "name": "ElementaryTypeName",
+                "src": "1187:7:65"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "307866316633656234306635626331616431333434373136636564386238613034333164383430623537383361656131666430313738366263323666333561633066",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 1094...(70 digits omitted)...5695",
+                  "value": "0xf1f3eb40f5bc1ad1344716ced8b8a0431d840b5783aea1fd01786bc26f35ac0f"
+                },
+                "id": 15004,
+                "name": "Literal",
+                "src": "1242:66:65"
+              }
+            ],
+            "id": 15005,
+            "name": "VariableDeclaration",
+            "src": "1187:121:65"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "KERNEL_APP_ADDR_NAMESPACE",
+              "scope": 15009,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes32",
+                  "type": "bytes32"
+                },
+                "id": 15006,
+                "name": "ElementaryTypeName",
+                "src": "1314:7:65"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "307864366630323863613065386564623461386339373537636134666463636162323566613165303331376461313138383130386637643264656531343930326662",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 9721...(69 digits omitted)...2955",
+                  "value": "0xd6f028ca0e8edb4a8c9757ca4fdccab25fa1e0317da1188108f7d2dee14902fb"
+                },
+                "id": 15007,
+                "name": "Literal",
+                "src": "1368:66:65"
+              }
+            ],
+            "id": 15008,
+            "name": "VariableDeclaration",
+            "src": "1314:120:65"
+          }
+        ],
+        "id": 15009,
+        "name": "ContractDefinition",
+        "src": "752:685:65"
+      }
+    ],
+    "id": 15010,
+    "name": "SourceUnit",
+    "src": "44:1394:65"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-10-14T14:14:04.346Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

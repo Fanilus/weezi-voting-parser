@@ -1,0 +1,15 @@
+{
+  "name": "weezi-voting-parser",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --experimental-json-modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fan",
+  "license": "ISC",
+  "dependencies": {
+    "radspec": "^1.12.0"
+  }
+}
