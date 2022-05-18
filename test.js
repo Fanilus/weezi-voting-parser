@@ -1,61 +1,66 @@
 const WeeziVotingParser = require('./index')
 const Web3 = require('web3')
 
-const rpc = 'https://mainnet.infura.io/v3/c228c742aafd4d15ba6842f3f7d3ae8c'
+// const rpc = 'https://mainnet.infura.io/v3/c228c742aafd4d15ba6842f3f7d3ae8c'
+const rpc = 'https://speedy-nodes-nyc.moralis.io/50bb4b751a7adee831fb8eeb/bsc/testnet'
 const web3 = new Web3(rpc)
 
+
 const installedApps = [
-    { app: '1c26fde2ce92cd1d932a0afb8367108eac7f369b', name: 'kernel' },
-    { app: 'd13a55705078d00fa53b99ec36e396c672b87b7e', name: 'acl' },
-    { app: 'a91ca42446d02e9d562619749fc13e9fc10b2e70', name: 'evmreg' },
-    { app: '24467575cca1497e352fcd99f875f03138650567', name: 'vault' },
-    { app: '84b254d345f95fec2bdd0305c2faa34fdfa0f334', name: 'finance' },
+    { app: 'b104f3133e9a04d9048feb2e26ed1e72036c078c', name: 'acl' },
+    { app: 'b1198586d39f533477104e2bf9186a87785d1bd5', name: 'evmreg' },
+    { app: '8507f9cd4bbe41664865c5cb3e6503e234f67f98', name: 'vault' },
+    { app: 'd422c73fa1df211f232e162746293bff411beaaf', name: 'agent' },
     {
-        app: 'e15528f5a49f099aaa24fe82ca99836d4a418f1a',
-        name: 'token-manager',
-        token: '0x4D98039AB1BfD7b7A7d6f0629BeBB7AeFd36286e',
-        is_gp: true
-    },
-    { app: '27a4a7cd632fa69f092b05aeceffe8dd909228df', name: 'voting' },
-    {
-        app: 'e4b9dbc2c8333f7fcdbbb0035a58136968bc1d88',
-        name: 'address-book'
-    },
-    {
-        app: '5c76aca89d2540096de5e2b4537bce813925c964',
-        name: 'allocations'
-    },
-    {
-        app: '751bd96d664f9b3456cb7c0296b4e78d7e13fec1',
+        app: '0f109bf1d4cca3dc64cf0ccb89898445529699f3',
         name: 'dot-voting'
     },
-    { app: '82ff0bc24ab4493dcf62f8353fcb340fd1a8988f', name: 'projects' },
-    { app: '7c82a40565c6e4213ac14141859cf175b3e1aa6a', name: 'rewards' },
-    { app: 'f8a8d25049ebfaf36cf1dd7ff51ebd0777fc9b32', name: 'agent' },
+    { app: '2abe7c3bb9d84560e75bb698697a35fd390093a9', name: 'voting' },
     {
-        app: 'aec164f9b9524e950c70ec611592b4147e588a11',
+        app: 'c1a8df07504adb6437b923168cb49236b0cbf2b8',
         name: 'token-manager',
-        token: '0x0D7DeA5922535087078dd3D7c554EA9f2655d4cB',
+        token: '0xDaa3867b1b7cc90a6b0586a55098725628A98E60',
         is_gp: true
     },
     {
-        app: '11f0e63161289c52c62ca21f241da6ee8afaa68b',
+        app: 'c0eede8a66398f3f850604e220471b961ac37314',
+        name: 'token-manager',
+        token: '0x302B5F75C4016C358A9d09283A13f69400E8D4A6'
+    },
+    {
+        app: '91a87142a85a4f3afbee01dd9e02135f3eab382d',
+        name: 'allocations'
+    },
+    { app: '08ea318a839df7b5901afdfba7f7b2e31edd8b63', name: 'finance' },
+    { app: '29abc1fe6b5d8933c4b351e9d63c0f43ea4ed3c2', name: 'rewards' },
+    {
+        app: 'f27e3077afd927e7188006dcb43dcfeaa91cc3fe',
         name: 'redemptions'
     },
     {
-        app: 'ac3f8e8518139f732218ff542d21cd6968e8209d',
+        app: '448ed925a5ed0fcb289429e45617f9e4f3298a2f',
         name: 'token-request'
     },
-    { app: '366793250f34ed87559996f58908b72e1863e6e9', name: 'delay' },
-    { app: 'c4efc591d713280a07eb5c7022ef807ba0619b50', name: 'voting' }
+    { app: '83d4b7581fef427e6bfb61c311a3f31139f25057', name: 'delay' },
+    { name: 'kernel', app: 'fa35141ed7032840f70badb1cc0715a9ced4d966' }
 ]
-const votingAddress = '0x27a4a7cd632fa69f092b05aeceffe8dd909228df'
 
-const weeziVotingParser = new WeeziVotingParser({ web3, votingAddress, installedApps })
+const weeziVotingParser = new WeeziVotingParser({ web3, installedApps })
 
-weeziVotingParser.parse({ voteId: 2 }).then((res, err) => {
-    if (err) return console.log(err)
-    console.log(res)
-}).catch(function (err) {
-    console.log(err);
-});
+
+async function test() {
+    let promises = []
+    for (let i = 0; i < 1; i++) {
+        promises.push(weeziVotingParser.parse({ voteId: i }))
+    }
+    Promise.all(promises).then((res) => {
+        console.log(res)
+    })
+    // weeziVotingParser.parse({ voteId: 20 }).then((res, err) => {
+    //     if (err) return console.log(err)
+    //     console.log(res)
+    // }).catch(function (err) {
+    //     console.log(err);
+    // });
+}
+test()
