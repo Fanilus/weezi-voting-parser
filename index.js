@@ -4,8 +4,8 @@ const fs = require('fs')
 const path = require('path')
 const radspec = require('radspec')
 const ABI_FOLDER = './abi/'
-// const debug = true
-const debug = false
+const debug = true
+// const debug = false
 function Parser(params) {
     this.web3 = params.web3
     this.installedApps = params.installedApps
@@ -17,7 +17,7 @@ function Parser(params) {
     }
     const votingAbi = JSON.parse(fs.readFileSync(path.resolve(__dirname, `${ABI_FOLDER}voting.json`)))
     this.voting = new this.web3.eth.Contract(votingAbi.abi, this.votingAddress)
-    trace('Init success')
+    trace('Init success. VotingAddress: ' + this.votingAddress)
 }
 
 Parser.prototype.parse = function parse(params) {
@@ -36,9 +36,10 @@ Parser.prototype.parse = function parse(params) {
         const findApp = this.installedApps.find((obj) => { return obj.app == appAddress })
 
         if (findApp == undefined) return reject({ error: 'Unknown app', success: false })
-        const appName = findApp.name.replace('-', '')
+        trace(findApp)
+        const appNameL = "name" in findApp ? findApp.name.replace('-', '') : ''
         try {
-            this.abi = JSON.parse(fs.readFileSync(path.resolve(__dirname, `${ABI_FOLDER}${appName}.json`)))
+            this.abi = JSON.parse(fs.readFileSync(path.resolve(__dirname, `${ABI_FOLDER}${appNameL}.json`)))
             this.methodByte = '0x' + vote.script.replace('0x', '').substring(56, 64)
             trace('methodByte:')
             trace(this.methodByte)
@@ -59,22 +60,51 @@ Parser.prototype.parse = function parse(params) {
         } catch {
             return reject({ error: 'Unknown method', success: false })
         }
+        let parsedMessage, method
         try {
-            const radspecMessage = await radspec.evaluate(expression, call)
-            const message = this.replaceAddressWithName(`${appAddress}: ${radspecMessage}`)
-            resolve({ message, success: true })
+            method = 'radspec'
+            parsedMessage = await radspec.evaluate(expression, call)
         } catch (error) {
-            let message = this.replaceAddressWithName(`${appAddress}: ${expression}`)
-            message = this.replaceParamsValues(message)
-            return resolve({ message, success: true })
+            method = 'weezi'
+            parsedMessage = this.replaceParamsValues(expression)
         }
+        method = 'weezi'
+        parsedMessage = this.replaceParamsValues(expression)
+        const message = this.replaceAddressWithName(parsedMessage)
+        const { template, replacements } = this.replaceForTemplate(parsedMessage)
+        const appName = this.replaceAddressWithName(appAddress)
+        return resolve({ message, success: true, template, replacements, method, appName, voteId })
 
     })
 }
 Parser.prototype.replaceAddressWithName = function replaceAddressWithName(txt) {
-    for (const app of this.installedApps)
-        txt = txt.replace(app.app, app.name.capitalize())
+    for (const app of this.installedApps) {
+        try {
+            const patern = new RegExp(app.app, 'gi')
+            txt = "name" in app && "app" in app ? txt.replace(patern, app.name.capitalize()) : txt
+        } catch (error) {
+            trace(error)
+        }
+    }
     return txt
+}
+Parser.prototype.replaceForTemplate = function replaceForTemplate(txt) {
+    let count = 0
+    let replacements = []
+    for (const app of this.installedApps) {
+        try {
+            const patern = new RegExp(app.app, 'gi')
+            if ("name" in app && "app" in app && txt.match(patern) > 0) {
+                txt = txt.replace(patern, `{{${count}}}`)
+                count++
+                replacements.push({ title: app.name.capitalize(), value: app.app })
+            }
+
+        } catch (error) {
+            trace(error)
+        }
+    }
+    return { template: txt, replacements }
 }
 Parser.prototype.replaceParamsValues = function replaceParamsValues(txt) {
     try {
@@ -88,7 +118,7 @@ Parser.prototype.replaceParamsValues = function replaceParamsValues(txt) {
             }
         }
     } catch (error) {
-        console.log(error)
+        trace(error)
     }
     return txt
 }
